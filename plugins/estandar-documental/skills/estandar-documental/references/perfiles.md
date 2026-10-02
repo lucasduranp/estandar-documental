@@ -4,7 +4,7 @@ Los perfiles definen **qué optimizar**, no cómo debe verse cada página. La Co
 
 | Perfil canónico | Optimiza | Prueba de uso final |
 |---|---|---|
-| **COMPACTO_OPERACIONAL** | rapidez + acción | ¿El lector encuentra decisión, estado y próximos pasos sin releer? |
+| **COMPACTO_OPERACIONAL** | rapidez + acción | ¿El lector encuentra objetivo, decisión, regla o próximo paso en segundos? |
 | **ANALÍTICO_NEGOCIO** | evidencia + comparación + decisión | ¿Puede evaluar conclusión, supuestos, cálculos y compensaciones? |
 | **VISUAL_COMERCIAL** | narrativa + marca + comunicación respaldada | ¿Entiende la oferta/mensaje sin decoración ni afirmaciones injustificadas? |
 | **REFERENCIA_RÁPIDA_OPERACIONAL** | recuperación + ejecución inmediata | ¿Puede localizar una regla, paso o dato en segundos? |
@@ -18,6 +18,21 @@ Los perfiles definen **qué optimizar**, no cómo debe verse cada página. La Co
 - A4 vertical es el valor por defecto, no una obligación estética universal.
 - El perfil no autoriza afirmaciones sin respaldo, decoración gratuita ni pérdida de editabilidad/accesibilidad.
 - La herramienta especialista elegida puede variar por perfil; Estándar Documental conserva la autoridad de diseño y aceptación.
+
+## COMPACTO_OPERACIONAL
+
+Objetivo: comprensión y acción inmediata con mínima carga de lectura.
+
+Aplicar estas reglas:
+
+- mostrar objetivo/conclusión principal antes del detalle;
+- agrupar en pocos bloques significativos; evitar mosaicos de microtarjetas o cuadrículas textuales;
+- preferir pasos, checklist, matriz corta o secciones breves sobre párrafos largos en columnas estrechas;
+- usar tablas solo cuando realmente representen datos, comparación o registro; no como sustituto de layout;
+- equilibrar la página completa: si el contenido está comprimido arriba y queda un gran vacío abajo, la composición falla;
+- si una página está pedida explícitamente, usarla de manera intencional sin llenar por llenar ni dejar media página desperdiciada;
+- la tipografía y el espaciado deben permitir lectura normal sin zoom;
+- el cierre debe reforzar acción, comprobación o próximo paso.
 
 ## ESTUDIO_APRENDIZAJE
 
