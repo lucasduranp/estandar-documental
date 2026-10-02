@@ -2,32 +2,41 @@
 
 ## Estado actual
 
-**CANDIDATA ESTRUCTURALMENTE ORGANIZADA. NO PROMOVIDA A VIGENTE.**
+**CANDIDATA VALIDADA CONTRA LA ESPECIFICACIÓN ACTUAL DE SKILL CREATOR. NO PROMOVIDA A VIGENTE.**
 
-La candidata fue simplificada para usar herramientas especialistas existentes y reducir dependencias heredadas del antiguo Professional Document Standard.
+La revisión se realizó contra el `Skill Creator` oficial de OpenAI y su `quick_validate.py`, además de la especificación actual de `agents/openai.yaml`.
 
-## Verificado en esta fase
+## Ajustes aplicados
 
-- repositorio canónico privado creado y accesible;
-- SKILL.md vigente en español;
-- referencias activas separadas de material heredado;
-- perfiles y modos normalizados;
-- evals v1.3 presentes;
-- helpers de validación/regresión separados del flujo normal;
-- procedencia de regresión histórica documentada;
-- activos obligatorios universales eliminados del núcleo;
-- documentación heredada movida a `archivo/` cuando podía confundirse con reglas vigentes.
+- la skill instalable quedó aislada en `estandar-documental/`;
+- la carpeta instalable contiene solo `SKILL.md`, `agents/openai.yaml` y referencias necesarias;
+- README, changelog, evals, regresión y archivo histórico quedaron fuera del paquete instalable;
+- `SKILL.md` usa únicamente `name` y `description` en el frontmatter;
+- se redujo el cuerpo a instrucciones operativas y referencias de carga progresiva;
+- `agents/openai.yaml` incorpora nombre visible, descripción corta y prompt por defecto;
+- el prompt por defecto menciona explícitamente `$estandar-documental`;
+- la carpeta de la skill coincide exactamente con su nombre técnico;
+- no se incluyen scripts ni assets sin necesidad funcional.
+
+## Resultados de validación
+
+- nombre: `estandar-documental` — válido, hyphen-case y menor a 64 caracteres;
+- description: 369 caracteres — dentro del máximo de 1024 y sin caracteres prohibidos;
+- frontmatter: solo `name` + `description`;
+- SKILL.md: 63 líneas — por debajo de la recomendación de 500;
+- `short_description`: 40 caracteres — dentro del rango recomendado 25–64;
+- `default_prompt`: referencia `$estandar-documental`;
+- referencias: un nivel de profundidad desde SKILL.md;
+- documentación auxiliar de desarrollo: fuera de la carpeta instalable.
 
 ## Pendiente
 
-1. Validación formal mediante Skill Creator.
-2. Revisión de estructura/links desde la herramienta de skills.
-3. Pruebas reales de COMPACTO, ANALÍTICO, ESTUDIO, ADAPTAR y REPLICAR.
-4. Instalación desde la misma fuente/release en ChatGPT Web.
-5. Instalación en Desktop/Codex mediante Skill Installer.
-6. Smoke test de disponibilidad y comportamiento en ambas superficies.
-7. Promoción a VIGENTE solo si no aparecen fallos materiales.
+1. Pruebas reales de COMPACTO, ANALÍTICO, ESTUDIO, ADAPTAR y REPLICAR.
+2. Instalación desde la misma release en ChatGPT Web.
+3. Instalación en Desktop/Codex mediante Skill Installer.
+4. Smoke test de disponibilidad y comportamiento en ambas superficies.
+5. Promoción a VIGENTE solo si no aparecen fallos materiales.
 
 ## Regla de promoción
 
-No declarar FINAL/VIGENTE porque el repositorio exista o porque una validación automática pase. La promoción exige prueba funcional y verificación de instalación.
+No declarar FINAL/VIGENTE por el mero hecho de pasar validación estructural. La promoción exige prueba funcional y verificación de instalación.
