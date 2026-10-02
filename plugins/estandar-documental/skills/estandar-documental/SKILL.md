@@ -12,6 +12,7 @@ description: Crear, adaptar, replicar y auditar documentos Word profesionales co
 - Clasificar primero el modo: **CREAR**, **ADAPTAR** o **REPLICAR**.
 - Seleccionar después el perfil: **COMPACTO_OPERACIONAL**, **ANALÍTICO_NEGOCIO**, **VISUAL_COMERCIAL**, **REFERENCIA_RÁPIDA_OPERACIONAL** o **ESTUDIO_APRENDIZAJE**.
 - Definir propósito, audiencia/uso, resultado esperado, fuentes de verdad, referencia aprobada, elementos bloqueados y salida.
+- Verificar que el título, alcance y contenido describan exactamente el mismo entregable.
 
 Leer [Perfiles](references/perfiles.md) para elegir el objetivo correcto. Leer [Idioma y Gobernanza](references/idioma-gobernanza.md) cuando haya dudas de nomenclatura o versiones.
 
@@ -27,6 +28,31 @@ Aplicar [Composición Adaptativa](references/composicion-adaptativa.md).
 
 Para **ESTUDIO_APRENDIZAJE**, leer además [Estudio y Aprendizaje](references/estudio-aprendizaje.md).
 
+## Gates no negociables de calidad profesional
+
+Antes de liberar cualquier DOCX:
+
+- **Jerarquía:** debe existir una ruta visual inequívoca. Título, mensaje principal, secciones y cierre no pueden competir entre sí.
+- **Uso de página:** no aceptar contenido comprimido en la mitad superior con una gran zona vacía inferior. Si ocurre, recomponer antes de reducir o entregar.
+- **Densidad:** no aceptar paredes de texto, columnas estrechas con párrafos largos ni texto miniaturizado.
+- **Semántica Word:** los encabezados visibles deben usar estilos de encabezado reales; las tablas no se usan como contenedores genéricos de layout.
+- **Coherencia visual:** tipografía, color, reglas, iconografía y espaciados deben responder a un sistema consistente. No introducir acentos aislados sin función.
+- **Alcance:** el contenido no puede ampliar silenciosamente el título o propósito.
+- **Aplicabilidad:** el lector debe poder encontrar la acción, decisión, regla o dato principal en segundos.
+- **Render final:** revisar todas las páginas después del último cambio material. Un archivo generado pero no inspeccionado sigue **BLOQUEADO**.
+
+### Gate adicional para COMPACTO_OPERACIONAL
+
+Un documento compacto no es simplemente “una página”. Debe:
+
+- priorizar una conclusión, objetivo o acción principal visible en la primera zona de lectura;
+- organizar el contenido en pocos bloques claramente distinguibles;
+- usar frases cortas, checklists, pasos o microestructuras cuando mejoren la ejecución;
+- evitar convertir narrativa en una cuadrícula de texto;
+- aprovechar la página de forma equilibrada: si el contenido ocupa claramente menos de ~70% del área útil mientras hay bloques densos arriba, recomponer;
+- evitar títulos o cabeceras desproporcionadas respecto del contenido;
+- mantener la lectura operativa a tamaño normal, sin zoom.
+
 ## Ejecutar con especialistas
 
 Aplicar [Ejecución Técnica](references/ejecucion-tecnica.md) y [Implementación Word](references/implementacion-word.md).
@@ -37,6 +63,7 @@ Aplicar [Ejecución Técnica](references/ejecucion-tecnica.md) y [Implementació
 - Usar Canva/diseño solo cuando un recurso visual mejore materialmente la comprensión.
 - Mantener Word como contenedor editable y semántico cuando la salida final sea DOCX.
 - No reconstruir dentro de esta skill capacidades ya resueltas por especialistas mantenidos por la plataforma.
+- Si el especialista produce un resultado que viola cualquiera de los gates anteriores, **corregirlo**; no aceptar su salida como autoridad estética.
 
 ## Proteger integridad y contexto
 
@@ -56,6 +83,7 @@ Aplicar [Control de Calidad](references/control-calidad.md).
 - Delegar controles mecánicos a herramientas existentes.
 - Evaluar además propósito, arquitectura, jerarquía, representación, densidad, uso del espacio, utilidad visual, aplicabilidad y fidelidad.
 - Revisar visualmente todas las páginas después del último cambio material.
+- Auditar estructura Word: headings, tablas, listas y accesibilidad.
 - Declarar **FINAL** solo con todos los controles aplicables aprobados y sin defectos BLOQUEANTES/MAYORES.
 - Mantener **BLOQUEADO** cuando falte evidencia o exista un defecto material.
 
