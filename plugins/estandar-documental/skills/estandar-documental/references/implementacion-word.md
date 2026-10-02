@@ -18,12 +18,14 @@ No reducir tipografía o visuales hasta hacerlos incómodos de leer para cumplir
 
 La familia tipográfica debe ser profesional, disponible en el entorno de destino y coherente con la referencia/proyecto. Aptos puede ser válida, pero no es una obligación universal.
 
-## Estructura
+## Estructura semántica obligatoria
 
 - usar estilos Título/Encabezado reales;
+- cualquier rótulo que funcione como sección debe mapear a Heading 1/2/3 salvo etiquetas menores claramente decorativas;
 - listas nativas y numeración semántica;
-- tablas para datos, comparaciones y registros estructurados, no como mecanismo genérico de layout;
-- encabezados semánticos de tabla;
+- tablas para datos, comparaciones y registros estructurados, **no como contenedor genérico de diseño**;
+- si una tabla tiene función semántica, marcar encabezados cuando corresponda;
+- evitar una única fila con grandes bloques narrativos como mecanismo de columnas;
 - evitar alturas fijas que recorten contenido;
 - mantener headings unidos al contenido siguiente;
 - mantener captions unidos a sus visuales;
@@ -31,7 +33,8 @@ La familia tipográfica debe ser profesional, disponible en el entorno de destin
 - mantener relaciones de aspecto;
 - texto alternativo significativo;
 - hipervínculos reales;
-- secciones válidas.
+- secciones válidas;
+- reducir formato directo cuando una regla de estilo reutilizable pueda expresarse mediante estilos Word.
 
 ## Composición
 
@@ -43,6 +46,8 @@ Si una tabla, visual o bloque no funciona:
 3. redistribuir espacio;
 4. añadir página si es necesario;
 5. solo después ajustar tamaños dentro de rangos profesionales.
+
+En una página solicitada explícitamente, revisar el **área útil completa**. Un bloque denso concentrado arriba con un tercio o más de página vacío abajo es un defecto de composición salvo justificación explícita.
 
 ## Visuales
 
@@ -59,7 +64,9 @@ Después del último cambio material:
 - renderizar;
 - revisar todas las páginas;
 - confirmar que no existen clipping, superposición, títulos huérfanos, tablas rotas, páginas vacías, miniaturización o vacíos accidentales;
+- confirmar balance vertical/horizontal y coherencia de color/tipografía;
 - validar accesibilidad y estructura semántica;
-- revisar fidelidad cuando aplique.
+- revisar fidelidad cuando aplique;
+- reabrir el DOCX final y repetir render si se produjo cualquier corrección.
 
 La herramienta documental resuelve la mecánica; Estándar Documental decide si el resultado es profesionalmente aceptable.
