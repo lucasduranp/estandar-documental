@@ -1,0 +1,10 @@
+{
+  "approved_version": "1.1",
+  "approval": "Aprobación explícita del usuario; el nombre histórico Candidate y textos awaiting-confirmation no gobiernan.",
+  "source_zip_sha256": "3200741a89bf742a1b36580375d9d188c03f80a7aac2082710378105676d3ff7",
+  "source_payload_hashes": "20/20 match",
+  "source_manifest_defect": "La autoentrada del manifiesto histórico usa el hash de archivo vacío; se excluye de nuevos manifiestos.",
+  "status": "RECONCILED_AND_REGRESSION_VALIDATED",
+  "cases": ["GD01","GD02","GD03","GD04","GD05","GD06","GD07","PR01"],
+  "candidate_v1_3_zip_sha256": "614861303eea0c66c466d62f64114a47d226f4932a77d657eabc4dc82b8ed287"
+}
