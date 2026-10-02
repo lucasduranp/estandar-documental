@@ -8,13 +8,32 @@ Repositorio canónico de la skill **Estándar Documental**.
 - Estado: **CANDIDATA / NO FINAL**
 - Idioma operativo y documental: **español**
 - Fuente de verdad: este repositorio
+- Skill instalable: `estandar-documental/`
 - Antecesor: Professional Document Standard (solo linaje y regresión histórica)
 
-## Principio de gobernanza
+## Gobernanza
 
-Este repositorio es la única fuente canónica para mantener la skill.
+Este repositorio es la única fuente canónica. Las instalaciones en ChatGPT Web y Desktop/Codex deben derivarse de la misma versión publicada aquí.
 
-Las instalaciones en ChatGPT Web y Desktop/Codex deben derivarse de la misma versión publicada aquí. Un ZIP, una instalación local o una copia en un chat no reemplazan esta fuente de verdad.
+Un ZIP, una instalación local o una copia en un chat no reemplazan esta fuente.
+
+## Estructura
+
+```
+estandar-documental/       ← carpeta instalable de la skill
+├── SKILL.md
+├── agents/openai.yaml
+└── references/
+
+evals/                     ← evaluación de desarrollo, no se instala
+regression/                ← trazabilidad histórica, no se instala
+archivo/                   ← antecedentes heredados, no se instala
+CHANGELOG.md
+VALIDACION_CANDIDATA.md
+VERSION
+```
+
+La carpeta instalable contiene solo lo necesario para que la skill funcione. Documentación de desarrollo, changelog, regresión y evals permanecen fuera para evitar contaminar el contexto de la skill.
 
 ## Flujo de publicación
 
@@ -28,19 +47,16 @@ BORRADOR → CANDIDATA → VALIDADA → RELEASE CANÓNICA → INSTALADA EN CHATG
 - Una pieza aprobada puede quedar bloqueada para ADAPTAR o REPLICAR.
 - El estándar prioriza propósito, comprensión, uso real, fidelidad y calidad profesional por sobre plantillas rígidas.
 
-## Estructura prevista
+## Instalación Desktop/Codex
 
-- `SKILL.md`: instrucciones canónicas.
-- `references/`: reglas y referencias operativas.
-- `evals/`: evaluaciones y casos de calidad.
-- `scripts/`: controles y utilidades.
-- `regression/`: evidencia histórica de regresión.
-- `assets/`: activos necesarios para validación.
-- `CHANGELOG.md`: historial de cambios.
-- `VERSION`: versión canónica.
+La ruta oficial para Skill Installer es:
 
-## Instalaciones
+```
+--repo lucasduranp/estandar-documental --path estandar-documental
+```
 
-- **ChatGPT Web:** instalar la release derivada de este repositorio.
-- **Desktop/Codex:** instalar la misma release mediante Skill Installer.
-- No mantener dos ramas funcionales independientes de la skill.
+Como el repositorio es privado, Skill Installer usará las credenciales Git existentes o `GITHUB_TOKEN`/`GH_TOKEN` cuando corresponda.
+
+## ChatGPT Web
+
+La instalación web debe derivarse de la misma carpeta `estandar-documental/` de esta release. No mantener una variante funcional separada.
