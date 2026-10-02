@@ -1,0 +1,20 @@
+{
+  "version": "1.3",
+  "proposito": "Escenarios de regresión/evaluación para Composición Adaptativa, Estudio/Aprendizaje, fidelidad y casos negativos de calidad.",
+  "casos": [
+    {"id":"AQ01","escenario":"Contenido ejecutivo denso","esperado":"APROBADO solo si permanece legible sin miniaturización; reestructurar o añadir página antes de reducir."},
+    {"id":"AQ02","escenario":"Contenido corto con exceso de espacio","esperado":"APROBADO solo si el espacio es intencional y la composición equilibrada; no añadir visuales de relleno."},
+    {"id":"AQ03","escenario":"Dataset más narrativa","esperado":"Elegir representación según necesidad de consulta, comparación o tendencia; no crear gráfico arbitrario."},
+    {"id":"AQ04","escenario":"Visual candidato que no añade comprensión","esperado":"No incorporarlo o eliminarlo."},
+    {"id":"AQ05","escenario":"Tabla y visual comunican lo mismo","esperado":"Conservar ambos solo si cumplen funciones distintas; de lo contrario simplificar."},
+    {"id":"AQ06","escenario":"Guía operacional","esperado":"Acción, regla o dato localizable rápidamente sin releer."},
+    {"id":"AQ07","escenario":"Guía de estudio con conceptos relacionados","esperado":"Usar color semántico, señalización y diagramas solo cuando mejoran aprendizaje; añadir estructuras de recuperación/aplicación cuando aporten."},
+    {"id":"FQ01","escenario":"Adaptar referencia visual aprobada a contenido nuevo","esperado":"Preservar sistema, jerarquía, tipografía, espaciado, proporciones, color y lenguaje visual salvo cambios necesarios o autorizados."},
+    {"id":"FQ02","escenario":"Replicar pieza aprobada con un cambio solicitado","esperado":"Sin rediseño ni reinterpretación no solicitados."},
+    {"id":"NEG01","escenario":"Doce tarjetas reducidas para caber en una página","esperado":"BLOQUEADO: miniaturización, legibilidad y composición."},
+    {"id":"NEG02","escenario":"Informe correcto más imagen de stock decorativa","esperado":"BLOQUEADO o eliminar imagen: sin utilidad visual."},
+    {"id":"NEG03","escenario":"Párrafos convertidos en muchas cajas/flechas sin ganancia informativa","esperado":"BLOQUEADO: pseudo-visualización."},
+    {"id":"NEG04","escenario":"Edición textual menor acompañada de nuevas fuentes/diseño/colores","esperado":"BLOQUEADO: rediseño no solicitado."},
+    {"id":"NEG05","escenario":"Gráfico duplica exactamente una tabla","esperado":"BLOQUEADO hasta diferenciar funciones o eliminar uno."}
+  ]
+}
