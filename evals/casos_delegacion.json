@@ -1,0 +1,119 @@
+{
+  "version": "1.3",
+  "proposito": "Escenarios para verificar uso de especialistas y límites de autoridad de Estándar Documental; no sustituyen pruebas E2E de producción.",
+  "casos": [
+    {
+      "id": "D1",
+      "escenario": "Crear un brief de decisión Word de una página con perfil canónico; especialista documental disponible para render y auditoría genérica.",
+      "debe_observarse": [
+        "el especialista documental ejecuta render o auditoría genérica",
+        "Estándar Documental conserva autoridad sobre recurso canónico, estructura y liberación"
+      ],
+      "no_debe_observarse": [
+        "el especialista sustituye el sistema documental",
+        "se omite la liberación de Estándar Documental"
+      ]
+    },
+    {
+      "id": "D2",
+      "escenario": "Revisar accesibilidad y estilo cuando el especialista documental no puede ejecutar esos controles.",
+      "debe_observarse": [
+        "usar a11y_audit.py y style_lint.py empaquetados como respaldo explícito",
+        "Estándar Documental continúa QA y registra evidencia"
+      ],
+      "no_debe_observarse": [
+        "bloquear solo por ausencia del especialista",
+        "preferir vendor cuando el especialista funciona"
+      ]
+    },
+    {
+      "id": "D3",
+      "escenario": "Crear DOCX ANALÍTICO_NEGOCIO desde XLSX de ventas con duplicados, reconciliación y cálculos de margen.",
+      "debe_observarse": [
+        "especialista de datos valida dataset y cálculos",
+        "Estándar Documental revisa procedencia, semántica de afirmaciones y presentación"
+      ],
+      "no_debe_observarse": [
+        "sustituir validación de dataset por control analítico documental",
+        "afirmaciones numéricas sin respaldo"
+      ]
+    },
+    {
+      "id": "D4",
+      "escenario": "Crear briefing Word de mercado actual con verificación externa y citas.",
+      "debe_observarse": [
+        "capacidad de investigación obtiene/verifica evidencia actual",
+        "Estándar Documental registra fuentes y separa hechos de interpretación"
+      ],
+      "no_debe_observarse": [
+        "inventar hechos actuales",
+        "tratar afirmaciones sin fuente como evidencia"
+      ]
+    },
+    {
+      "id": "D5",
+      "escenario": "Usar recurso canónico aprobado y texto suministrado para un documento COMPACTO_OPERACIONAL simple.",
+      "debe_observarse": [
+        "Estándar Documental maneja arquitectura, vinculación y liberación",
+        "especialista solo cuando render/auditoría genérica lo requiere"
+      ],
+      "no_debe_observarse": [
+        "rutear innecesariamente a datos/investigación/PDF",
+        "actuar como router genérico"
+      ]
+    },
+    {
+      "id": "D6",
+      "escenario": "Crear recomendación ANALÍTICO_NEGOCIO con CSV y regulación externa actual.",
+      "debe_observarse": [
+        "especialistas de datos e investigación validan sus dimensiones",
+        "especialista DOCX puede manejar mecánica genérica",
+        "Estándar Documental integra y decide FINAL/BLOQUEADO"
+      ],
+      "no_debe_observarse": [
+        "especialista declara cumplimiento del estándar",
+        "omitir controles requeridos"
+      ]
+    },
+    {
+      "id": "D7",
+      "escenario": "Usuario pide solo slides, fórmulas de spreadsheet o editar PDF existente sin Word profesional.",
+      "debe_observarse": [
+        "rutear cada formato al especialista apropiado",
+        "Estándar Documental permanece inactivo salvo que también se pida DOCX profesional"
+      ],
+      "no_debe_observarse": [
+        "simular internamente otros formatos",
+        "actuar como router genérico"
+      ]
+    },
+    {
+      "id": "D8",
+      "escenario": "Crear guía ESTUDIO_APRENDIZAJE con color semántico, mapas conceptuales y ejemplos resueltos; Canva y DOCX disponibles.",
+      "debe_observarse": [
+        "seleccionar ESTUDIO_APRENDIZAJE y definir estrategia visual/de aprendizaje",
+        "usar Canva solo para visuales que mejoren aprendizaje",
+        "preservar estructura Word editable/semántica",
+        "Estándar Documental hace QA final de utilidad visual y aplicabilidad"
+      ],
+      "no_debe_observarse": [
+        "cuota obligatoria de imágenes decorativas",
+        "aplanar todo el documento a imágenes",
+        "usar color como única señal de significado",
+        "Canva se vuelve autoridad documental"
+      ]
+    },
+    {
+      "id": "D9",
+      "escenario": "Crear informe profesional dominado por texto donde ningún visual mejora comprensión.",
+      "debe_observarse": [
+        "se puede elegir cero visuales añadidos",
+        "optimizar espacio y jerarquía sin relleno decorativo"
+      ],
+      "no_debe_observarse": [
+        "invocar Canva solo porque está disponible",
+        "añadir imagen para llenar espacio"
+      ]
+    }
+  ]
+}
