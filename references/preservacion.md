@@ -1,13 +1,55 @@
 # Preservación
 
-Partir del documento suministrado y crear una copia de trabajo reversible. Registrar hash previo y objetivo autorizado exacto. Inventariar texto del cuerpo, estilos de párrafo/carácter, tablas objetivo y no objetivo, encabezados, pies, imágenes, relaciones, secciones y campos antes de editar.
+Partir del documento suministrado y crear una copia reversible antes de editar.
 
-Preservar tipografía, marca y geometría válidas fuera del cambio solicitado. No normalizar el archivo completo al Core. Reparar solo defectos demostrados y referencias dependientes necesarias; documentar cada diferencia permitida. Comparar las partes XML y el contenido semántico resultante contra la fuente y luego comparar renderizados. Diferencias de bytes producidas por serialización ZIP no equivalen automáticamente a cambios de contenido.
+## Objetivo
 
-Para toda edición de producción, crear instantáneas legibles por máquina antes/después y una especificación de cambios esperados que nombre cada objeto y operación permitidos. La reparación de anchos de tabla debe usar la geometría de sección existente: los anchos finales deben sumar exactamente el ancho útil de página y la rejilla junto con cada celda deben coincidir. Preservar o añadir encabezado repetido nativo y protección contra división de filas solo cuando la tarea lo exija. Un cambio no declarado en tabla, contenido, estilo, tema, fuente, color, encabezado/pie, imagen, relación, numeración, campo o configuración de página es inesperado y bloquea la liberación. `unexpected_changes` debe ser cero.
+Modificar únicamente lo solicitado y preservar todo lo demás que siga siendo válido: contenido, tipografía, marca, geometría, tablas, encabezados, pies, imágenes, relaciones, secciones, campos y lenguaje visual.
 
-Renderizar e inspeccionar fuente y resultado completos. Registrar comprobantes e inspecciones contra hashes reales. Una liberación de preservación requiere aprobar estructura, preservación, accesibilidad, fidelidad de fuentes del PDF, render visual completo, inspección visual y uso final. El formato directo existente se evalúa por diferencia; no se impone sobre un documento preservado la regla histórica de cero formato directo del Core.
+Una referencia aprobada es una **baseline bloqueada**, no una inspiración para rediseñar.
 
-PR01 permanece como caso histórico aprobado de regresión. GD08 es su nombre histórico y no pertenece a la familia visual canónica. Sus entradas, salidas y aserciones exactas permanecen en `regression/approved-v1.1`; ver [Reconciliación](reconciliacion.md). No aplicar normalización de alineación canónica a PR01.
+## Antes de editar
 
-El control de fuentes para preservación verifica las fuentes originales intencionadas contra la fuente y su render nativo. Aptos es obligatoria para la familia Core histórica, no una autorización para cambiar la tipografía de un documento preservado.
+Registrar:
+- documento fuente;
+- alcance exacto del cambio;
+- elementos bloqueados;
+- tablas/visuales/secciones objetivo;
+- cambios permitidos;
+- cualquier excepción funcional necesaria.
+
+Cuando la herramienta disponible permita hashes o diferencias estructurales, utilizarlos. Cuando no, comparar semántica y visualmente antes/después.
+
+## Durante la edición
+
+- no normalizar el documento completo a defaults del estándar;
+- no cambiar tipografía, colores, proporciones o layout fuera del alcance;
+- reparar solo defectos demostrados y dependencias necesarias;
+- mantener tablas y visuales legibles;
+- no introducir un nuevo sistema visual;
+- documentar cualquier cambio colateral imprescindible.
+
+## Después de editar
+
+Revisar el documento completo, no solo el bloque modificado:
+- contenido preservado;
+- estructura Word;
+- paginación;
+- tablas;
+- imágenes;
+- encabezados/pies;
+- numeración;
+- fuentes;
+- accesibilidad;
+- clipping/superposición;
+- fidelidad visual.
+
+Un cambio no solicitado que altere materialmente una pieza aprobada es **BLOQUEANTE**.
+
+## Regresión histórica
+
+PR01/GD08 permanece como antecedente de preservación dentro de la regresión histórica. Su procedencia se registra en [regression/provenance.json](../regression/provenance.json). No se utiliza como plantilla visual ni como obligación de implementación.
+
+## Tipografía
+
+Preservar la tipografía original válida del documento. Aptos pertenece a una familia histórica de regresión; no autoriza convertir documentos existentes a Aptos.
