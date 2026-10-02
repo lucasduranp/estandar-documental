@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estándar Documental"
+  short_description: "Crear y adaptar documentos profesionales"
+  default_prompt: "Usa $estandar-documental para crear o adaptar este documento con composición, fidelidad y control de calidad profesional."
