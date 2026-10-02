@@ -1,0 +1,22 @@
+{
+  "name": "lucas-documental",
+  "interface": {
+    "displayName": "Lucas — Documentos"
+  },
+  "plugins": [
+    {
+      "name": "estandar-documental",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/lucasduranp/estandar-documental.git",
+        "path": "./plugins/estandar-documental",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

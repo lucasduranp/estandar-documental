@@ -1,13 +1,10 @@
-# Cambios — Estándar Documental v1.3 candidata
+# Cambios — v1.3.0
 
-- Fuente canónica: este repositorio.
-- Idioma operativo: español.
-- Professional Document Standard: antecedente histórico, sin fallback.
-- Modos: CREAR, ADAPTAR y REPLICAR.
-- Perfiles: COMPACTO_OPERACIONAL, ANALÍTICO_NEGOCIO, VISUAL_COMERCIAL, REFERENCIA_RÁPIDA_OPERACIONAL y ESTUDIO_APRENDIZAJE.
-- Nueva lógica: Composición Adaptativa, Utilidad Visual, control de densidad/espacio, aplicabilidad y fidelidad.
-- Ejecución: specialist-first; Word/DOCX, datos, investigación y Canva se usan cuando corresponda.
-- Scripts propios: helpers de validación/regresión, no runtime obligatorio.
-- A4 y 25,4 mm: defaults, no reglas universales.
-- Regresión histórica: evidencia de procedencia, no plantilla.
-- Estado: CANDIDATA. Pendiente de Skill Creator, pruebas reales, instalación Web/Desktop y smoke tests.
+- Migración al formato actual **plugin skills-only**.
+- Manifest portable `plugin.json` + fallback `.codex-plugin/plugin.json`.
+- Skill movida a `plugins/estandar-documental/skills/estandar-documental/`.
+- Marketplace repo agregado en `.agents/plugins/marketplace.json`.
+- GitHub queda como única fuente canónica.
+- Desktop/Codex/Work consumen el plugin; ChatGPT Web puede usar una distribución cloud de la misma skill.
+- Se elimina la copia activa duplicada de la raíz.
+- Se mantienen composición adaptativa, perfiles, integridad, fidelidad, español por defecto y ejecución specialist-first.

@@ -1,42 +1,25 @@
-# Validación — Estándar Documental v1.3 CANDIDATA
+# Validación — Estándar Documental v1.3
 
-## Estado actual
+## Estado
 
-**CANDIDATA VALIDADA CONTRA LA ESPECIFICACIÓN ACTUAL DE SKILL CREATOR. NO PROMOVIDA A VIGENTE.**
+**MIGRADA A PLUGIN SKILLS-ONLY. PENDIENTE DE SMOKE TEST FUNCIONAL.**
 
-La revisión se realizó contra el `Skill Creator` oficial de OpenAI y su `quick_validate.py`, además de la especificación actual de `agents/openai.yaml`.
+## Verificado
 
-## Ajustes aplicados
-
-- la skill instalable quedó aislada en `estandar-documental/`;
-- la carpeta instalable contiene solo `SKILL.md`, `agents/openai.yaml` y referencias necesarias;
-- README, changelog, evals, regresión y archivo histórico quedaron fuera del paquete instalable;
-- `SKILL.md` usa únicamente `name` y `description` en el frontmatter;
-- se redujo el cuerpo a instrucciones operativas y referencias de carga progresiva;
-- `agents/openai.yaml` incorpora nombre visible, descripción corta y prompt por defecto;
-- el prompt por defecto menciona explícitamente `$estandar-documental`;
-- la carpeta de la skill coincide exactamente con su nombre técnico;
-- no se incluyen scripts ni assets sin necesidad funcional.
-
-## Resultados de validación
-
-- nombre: `estandar-documental` — válido, hyphen-case y menor a 64 caracteres;
-- description: 369 caracteres — dentro del máximo de 1024 y sin caracteres prohibidos;
-- frontmatter: solo `name` + `description`;
-- SKILL.md: 63 líneas — por debajo de la recomendación de 500;
-- `short_description`: 40 caracteres — dentro del rango recomendado 25–64;
-- `default_prompt`: referencia `$estandar-documental`;
-- referencias: un nivel de profundidad desde SKILL.md;
-- documentación auxiliar de desarrollo: fuera de la carpeta instalable.
+- manifest portable en `plugins/estandar-documental/plugin.json`;
+- fallback compatible en `plugins/estandar-documental/.codex-plugin/plugin.json`;
+- skill en `plugins/estandar-documental/skills/estandar-documental/`;
+- plugin sin MCP, apps, hooks ni scripts innecesarios;
+- marketplace repo en `.agents/plugins/marketplace.json`;
+- marketplace apunta al repositorio público y a `./plugins/estandar-documental`;
+- manifest portable usa el schema Agent Plugins 1.0;
+- presentación OpenAI vive en `extensions.com.openai`;
+- copia activa antigua de la skill en raíz eliminada;
+- evals, regresión y archivo histórico permanecen fuera del plugin.
 
 ## Pendiente
 
-1. Pruebas reales de COMPACTO, ANALÍTICO, ESTUDIO, ADAPTAR y REPLICAR.
-2. Instalación desde la misma release en ChatGPT Web.
-3. Instalación en Desktop/Codex mediante Skill Installer.
-4. Smoke test de disponibilidad y comportamiento en ambas superficies.
-5. Promoción a VIGENTE solo si no aparecen fallos materiales.
-
-## Regla de promoción
-
-No declarar FINAL/VIGENTE por el mero hecho de pasar validación estructural. La promoción exige prueba funcional y verificación de instalación.
+1. Instalar/actualizar el plugin desde el marketplace.
+2. Ejecutar un DOCX real en Work.
+3. Verificar invocación en Codex.
+4. Si pasa, marcar v1.3.0 como VIGENTE.
