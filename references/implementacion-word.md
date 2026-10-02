@@ -2,22 +2,64 @@
 
 ## Principio
 
-La estructura Word debe ser semántica, editable y mantenible. En rutas basadas en el recurso canónico, heredar sus estilos, tema y numeración en vez de recrear apariencia con formato directo. En ADAPTAR/REPLICAR, la referencia válida del usuario/proyecto puede gobernar sobre el Core histórico.
+La estructura Word debe ser semántica, editable y mantenible. Usar la capacidad documental disponible para construir y editar DOCX; Estándar Documental gobierna propósito, arquitectura, fidelidad y aceptación.
+
+En ADAPTAR/REPLICAR, la referencia válida del usuario/proyecto gobierna sobre defaults genéricos.
 
 ## Valores por defecto y adaptabilidad
 
-Valor general para CREAR: A4 vertical. La ruta canónica de respaldo validada conserva 25,4 mm exactos y Aptos porque su regresión depende de ello.
+Para CREAR:
+- A4 vertical como punto de partida;
+- márgenes de 25,4 mm como default seguro;
+- aproximadamente 20–25,4 mm cuando mejore materialmente el uso de página sin reducir legibilidad;
+- orientación horizontal solo cuando aporte una ventaja funcional clara.
 
-En ejecución **CREAR con especialista**, 25,4 mm es un valor seguro por defecto, no un control rígido universal. Puede usarse aproximadamente 20–25,4 mm cuando mejore materialmente el uso de página sin reducir legibilidad, y debe quedar registrado en el manifiesto/revisión. Orientación horizontal requiere beneficio funcional real. No reducir tipografía para cumplir un número de páginas arbitrario.
+No reducir tipografía o visuales hasta hacerlos incómodos de leer para cumplir un número de páginas arbitrario.
 
-Escala histórica del recurso canónico: Aptos Normal 11 pt, Título 26 pt, Encabezado 1 16 pt, Encabezado 2 13 pt, Encabezado 3 11,5 pt, cuerpo de tabla 9,5 pt. Es referencia del recurso, no obligación para marcas/proyectos distintos.
+La familia tipográfica debe ser profesional, disponible en el entorno de destino y coherente con la referencia/proyecto. Aptos puede ser válida, pero no es una obligación universal.
 
 ## Estructura
 
-Usar estilos Título/Encabezado reales, listas nativas y numeración semántica. Las listas no son encabezados. Usar tablas para datos, comparaciones y registros estructurados, no como mecanismo genérico de diseño. Mantener encabezados semánticos, ajuste de texto legible y filas sin altura fija que recorte contenido.
+- usar estilos Título/Encabezado reales;
+- listas nativas y numeración semántica;
+- tablas para datos, comparaciones y registros estructurados, no como mecanismo genérico de layout;
+- encabezados semánticos de tabla;
+- evitar alturas fijas que recorten contenido;
+- mantener headings unidos al contenido siguiente;
+- mantener captions unidos a sus visuales;
+- preservar orden de lectura;
+- mantener relaciones de aspecto;
+- texto alternativo significativo;
+- hipervínculos reales;
+- secciones válidas.
 
-Mantener encabezados unidos al contenido siguiente, pies de figura unidos a figuras, orden de lectura útil, relaciones de aspecto intactas, texto alternativo significativo, hipervínculos reales y secciones válidas. Inspeccionar encabezados, pies, estilos/tema y cuerpo.
+## Composición
 
-## Especialistas
+La implementación Word debe obedecer [Composición Adaptativa](composicion-adaptativa.md), no una plantilla fija.
 
-El especialista documental puede resolver mecánica, renderizado, accesibilidad y operaciones Word. Sus valores visuales genéricos no deben sustituir una referencia aprobada. Canva/diseño puede producir recursos visuales; integrarlos sin sacrificar editabilidad del texto principal ni estructura semántica del DOCX.
+Si una tabla, visual o bloque no funciona:
+1. corregir contenido/arquitectura;
+2. cambiar representación;
+3. redistribuir espacio;
+4. añadir página si es necesario;
+5. solo después ajustar tamaños dentro de rangos profesionales.
+
+## Visuales
+
+Canva/diseño puede producir diagramas, mapas conceptuales, marcos, comparativas o recursos gráficos. Integrarlos en Word de manera que:
+- el recurso siga siendo legible;
+- el texto principal no quede rasterizado innecesariamente;
+- no se deforme ni recorte sin intención;
+- la composición general siga editable y navegable;
+- el visual tenga función real.
+
+## Control final
+
+Después del último cambio material:
+- renderizar;
+- revisar todas las páginas;
+- confirmar que no existen clipping, superposición, títulos huérfanos, tablas rotas, páginas vacías, miniaturización o vacíos accidentales;
+- validar accesibilidad y estructura semántica;
+- revisar fidelidad cuando aplique.
+
+La herramienta documental resuelve la mecánica; Estándar Documental decide si el resultado es profesionalmente aceptable.
