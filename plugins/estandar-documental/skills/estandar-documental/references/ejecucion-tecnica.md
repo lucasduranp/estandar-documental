@@ -1,94 +1,66 @@
-# Ejecución técnica — Estándar Documental v1.3
+# Ejecución técnica — Estándar Documental v1.3.4
 
 ## Principio
 
-La skill gobierna **qué debe conseguir el documento** y delega la mecánica a la mejor herramienta disponible. No reconstruir dentro de Estándar Documental capacidades que ya existen en especialistas de documentos, datos, investigación, diseño o accesibilidad.
+La skill gobierna **qué debe conseguir el documento** y delega la mecánica al especialista oficial de documentos. No reconstruir dentro de Estándar Documental capacidades ya existentes.
 
 > **El especialista ejecuta. Estándar Documental gobierna.**
 
+## Regla de routing para DOCX
+
+Cuando la salida sea Word/DOCX en Work o Codex:
+
+1. seleccionar explícitamente la capacidad **@Documents / Documents** disponible en la superficie;
+2. aplicar Estándar Documental como capa de gobernanza;
+3. no invocar runtimes heredados ni loaders locales propios como ruta de producción;
+4. si @Documents no está disponible en esa superficie, detenerse e informar la limitación exacta.
+
+El fallo de un runtime heredado no debe contaminar la ruta oficial de documentos.
+
 ## Flujo
 
-1. Definir Contrato de Tarea: propósito, audiencia/uso, resultado esperado, modo, perfil, fuentes, referencia aprobada y salida.
-2. Elegir representación y composición mediante Composición Adaptativa.
-3. Seleccionar especialistas estrictamente necesarios.
-4. Construir el documento.
-5. Renderizar/revisar con herramientas existentes.
-6. Aplicar controles de calidad, fidelidad y uso final.
-7. Liberar como FINAL o mantener BLOQUEADO.
+1. Definir Contrato de Tarea.
+2. Cargar decisiones bloqueadas.
+3. Seleccionar perfil y composición.
+4. Invocar @Documents.
+5. Construir DOCX con Aptos declarada.
+6. Ejecutar QA estructural y visual.
+7. Liberar FINAL o BLOQUEADO.
 
-## Especialistas
+## Aptos y render
 
-### Documento / DOCX
-Usar la capacidad documental disponible para:
-- creación y edición Word;
-- estilos y estructura semántica;
-- paginación;
-- tablas;
-- accesibilidad;
-- renderizado y revisión técnica.
+- Aptos es obligatoria en el DOCX.
+- Verificar estilos/tema/runs del archivo.
+- No cambiar de fuente porque el preview local no tenga Aptos.
+- Si el preview auxiliar sustituye la fuente, usarlo para revisar composición, clipping, balance y jerarquía, dejando claro que la fidelidad tipográfica del preview es limitada.
+- El target primario de fidelidad tipográfica es Microsoft Word / Microsoft 365.
+- Diseñar con holgura suficiente para evitar layouts frágiles ante pequeñas diferencias de métricas.
 
-La herramienta no decide por sí sola propósito, perfil, fidelidad ni aceptación.
+## Otros especialistas
 
 ### Datos
-Usar especialista de datos para:
-- cálculos;
-- validación de dataset;
-- gráficos cuantitativos;
-- reconciliación y métricas.
-
-Estándar Documental decide qué representación entra al documento y cómo se interpreta.
+Usar especialista de datos para cálculos, validación y gráficos cuantitativos.
 
 ### Investigación
-Usar investigación/web cuando el contenido requiera evidencia pública actual, verificación externa o contraste experto. No investigar de nuevo si la información ya está suficientemente respaldada y vigente.
+Usar web/investigación solo cuando el contenido requiera evidencia pública actual.
 
 ### Diseño / Canva
-Usar Canva u otra herramienta visual cuando un diagrama, mapa conceptual, marco, comparativa visual o recurso de estudio/comercial mejore materialmente la comprensión. No invocarla por decoración ni por cuota de imágenes.
-
-Cuando la salida final sea DOCX, Word sigue siendo el contenedor editable y semántico. Evitar rasterizar texto principal innecesariamente.
-
-## Perfiles
-
-- COMPACTO_OPERACIONAL: rapidez y acción.
-- ANALÍTICO_NEGOCIO: evidencia y decisión.
-- VISUAL_COMERCIAL: narrativa y comunicación respaldada.
-- REFERENCIA_RÁPIDA_OPERACIONAL: consulta inmediata.
-- ESTUDIO_APRENDIZAJE: comprensión, memoria, recuperación y aplicación.
-
-Los perfiles son funciones objetivo, no plantillas.
-
-## Márgenes, tipografía y formato
-
-A4 vertical y márgenes de 25,4 mm son valores seguros por defecto para CREAR. Pueden ajustarse de forma razonada —por ejemplo, aproximadamente 20–25,4 mm— cuando mejoren claramente el uso de página sin degradar legibilidad.
-
-En ADAPTAR/REPLICAR gobierna la referencia aprobada.
-
-No reducir tipografía ni visuales hasta hacerlos ilegibles para cumplir un número de páginas arbitrario.
-
-## Preservación
-
-Para ADAPTAR/REPLICAR:
-- trabajar sobre copia reversible;
-- identificar elementos bloqueados;
-- modificar solo lo autorizado o funcionalmente imprescindible;
-- comparar antes/después;
-- revisar el documento completo tras cambios;
-- bloquear rediseños colaterales.
-
-La referencia aprobada es una baseline bloqueada, no una inspiración.
+Usar Canva u otra herramienta visual cuando un diagrama o recurso visual mejore materialmente la comprensión. Word sigue siendo el contenedor editable.
 
 ## QA
 
-Delegar controles mecánicos cuando exista herramienta especializada:
-- archivo válido;
-- clipping/overflow;
+Delegar controles mecánicos a @Documents y herramientas disponibles:
+- validez del archivo;
+- estilos;
 - headings;
 - tablas;
 - accesibilidad;
-- fuentes;
+- fuentes declaradas;
 - metadatos;
-- render.
+- paginación;
+- render/preview.
 
-Estándar Documental conserva los controles inteligentes:
+Estándar Documental conserva controles inteligentes:
 - propósito;
 - arquitectura;
 - jerarquía;
@@ -98,15 +70,9 @@ Estándar Documental conserva los controles inteligentes:
 - aplicabilidad;
 - fidelidad.
 
-Un aprobado automático nunca sustituye la revisión visual y contextual final.
-
-## Scripts
-
-Los scripts incluidos en este repositorio son **helpers de regresión/validación**, no un runtime obligatorio para producir todos los documentos. La ruta técnica heredada se conserva en `archivo/ejecucion-tecnica-heredada.md` y en la evidencia histórica, pero no gobierna v1.3.
-
 ## Estado de liberación
 
-- **FINAL**: todos los controles aplicables pasan y no existen defectos BLOQUEANTES/MAYORES.
-- **BLOQUEADO**: falta evidencia, existe un defecto material o no puede verificarse una condición obligatoria.
+- **FINAL**: todos los controles aplicables pasan; el DOCX declara Aptos y no hay defectos BLOQUEANTES/MAYORES.
+- **BLOQUEADO**: falta una capacidad imprescindible, existe un defecto material o el DOCX no cumple una decisión bloqueada.
 
-No declarar FINAL por el mero hecho de que el archivo haya sido generado.
+La ausencia de Aptos en un preview auxiliar, por sí sola, no bloquea si el DOCX conserva Aptos como fuente declarada.
