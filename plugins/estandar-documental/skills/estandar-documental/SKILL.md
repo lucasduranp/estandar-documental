@@ -5,10 +5,14 @@ description: Crear, adaptar, replicar y auditar documentos Word profesionales co
 
 # Estándar Documental
 
-## Gobernar antes de construir
+## Gobernanza obligatoria
 
+Antes de cualquier ejecución o cambio del estándar, leer [Decisiones bloqueadas](references/decisiones-bloqueadas.md).
+
+- **Aptos es la tipografía oficial y obligatoria de Estándar Documental.**
 - Trabajar en español por defecto.
 - Tratar Professional Document Standard y versiones anteriores como antecedentes históricos, nunca como fallback operativo.
+- No importar decisiones visuales de otros sistemas. En particular, **Avenir Next pertenece a las publicaciones de LinkedIn de Agrícola Zhong Yi y no a Estándar Documental**.
 - Clasificar primero el modo: **CREAR**, **ADAPTAR** o **REPLICAR**.
 - Seleccionar después el perfil: **COMPACTO_OPERACIONAL**, **ANALÍTICO_NEGOCIO**, **VISUAL_COMERCIAL**, **REFERENCIA_RÁPIDA_OPERACIONAL** o **ESTUDIO_APRENDIZAJE**.
 - Definir propósito, audiencia/uso, resultado esperado, fuentes de verdad, referencia aprobada, elementos bloqueados y salida.
@@ -20,13 +24,15 @@ Leer [Perfiles](references/perfiles.md). Leer [Idioma y Gobernanza](references/i
 
 En **CREAR**, elegir una fuente visual explícita:
 
-1. referencia aprobada del usuario/proyecto;
-2. sistema visual de marca vigente;
+1. referencia aprobada del usuario/proyecto compatible con las decisiones bloqueadas;
+2. sistema visual de marca vigente compatible con las decisiones bloqueadas;
 3. si no existe ninguna, usar [Sistema Visual por Defecto](references/sistema-visual-default.md).
+
+La fuente visual puede definir color, composición, iconografía y ritmo, pero **no sustituye Aptos** salvo instrucción explícita del usuario para ese documento.
 
 Nunca dejar que Word o el especialista elijan silenciosamente un estilo genérico por defecto.
 
-En **ADAPTAR/REPLICAR**, gobierna la referencia aprobada y no se aplica el sistema visual por defecto.
+En **ADAPTAR/REPLICAR**, gobierna la referencia aprobada salvo conflicto con una instrucción explícita del usuario o con una decisión bloqueada que deba preservarse.
 
 ## Diseñar según la función
 
@@ -44,8 +50,9 @@ Para **ESTUDIO_APRENDIZAJE**, leer además [Estudio y Aprendizaje](references/es
 
 Antes de liberar cualquier DOCX:
 
+- **Tipografía:** Aptos aplicada de forma consistente; sustitución silenciosa = BLOQUEO.
 - **Jerarquía:** ruta visual inequívoca entre título, mensaje principal, secciones y cierre.
-- **Sistema visual:** tipografía, color, reglas, superficies y espaciados deben responder a una lógica consistente.
+- **Sistema visual:** color, reglas, superficies y espaciados deben responder a una lógica consistente.
 - **Genericidad:** en CREAR, bloquear apariencia de Word por defecto salvo petición explícita de estilo plano.
 - **Uso de página:** no aceptar contenido comprimido con grandes zonas vacías accidentales.
 - **Densidad:** no aceptar paredes de texto, columnas estrechas con párrafos largos ni texto miniaturizado.
@@ -76,7 +83,7 @@ Aplicar [Ejecución Técnica](references/ejecucion-tecnica.md) y [Implementació
 - Usar Canva/diseño cuando un recurso visual mejore materialmente la comprensión.
 - Mantener Word como contenedor editable y semántico cuando la salida final sea DOCX.
 - No reconstruir dentro de esta skill capacidades ya resueltas por especialistas.
-- Si el especialista devuelve un resultado genérico o viola los gates anteriores, **corregirlo**; no aceptar su salida como autoridad estética.
+- Si el especialista devuelve una fuente distinta de Aptos, un resultado genérico o viola los gates anteriores, **corregirlo**; no aceptar su salida como autoridad estética.
 
 ## Proteger integridad y contexto
 
@@ -95,6 +102,7 @@ Aplicar [Control de Calidad](references/control-calidad.md).
 
 - Delegar controles mecánicos a herramientas existentes.
 - Evaluar propósito, arquitectura, jerarquía, sistema visual, representación, densidad, uso del espacio, utilidad visual, aplicabilidad y fidelidad.
+- Verificar explícitamente **Aptos** en el DOCX/render final.
 - Revisar visualmente todas las páginas después del último cambio material.
 - Auditar estructura Word: headings, tablas, listas y accesibilidad.
 - Declarar **FINAL** solo con todos los controles aplicables aprobados y sin defectos BLOQUEANTES/MAYORES.
