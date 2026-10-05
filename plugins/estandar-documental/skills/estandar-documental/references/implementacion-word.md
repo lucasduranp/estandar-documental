@@ -1,8 +1,8 @@
-# Implementación Word nativa — v1.3
+# Implementación Word nativa — v1.3.2
 
 ## Principio
 
-La estructura Word debe ser semántica, editable y mantenible. Usar la capacidad documental disponible para construir y editar DOCX; Estándar Documental gobierna propósito, arquitectura, fidelidad y aceptación.
+La estructura Word debe ser semántica, editable y mantenible **sin reducir el documento a una apariencia genérica**. Usar la capacidad documental disponible; Estándar Documental gobierna propósito, sistema visual, arquitectura, fidelidad y aceptación.
 
 En ADAPTAR/REPLICAR, la referencia válida del usuario/proyecto gobierna sobre defaults genéricos.
 
@@ -10,63 +10,56 @@ En ADAPTAR/REPLICAR, la referencia válida del usuario/proyecto gobierna sobre d
 
 Para CREAR:
 - A4 vertical como punto de partida;
-- márgenes de 25,4 mm como default seguro;
-- aproximadamente 20–25,4 mm cuando mejore materialmente el uso de página sin reducir legibilidad;
-- orientación horizontal solo cuando aporte una ventaja funcional clara.
+- márgenes 20–25,4 mm según composición;
+- orientación horizontal solo cuando aporte una ventaja funcional clara;
+- sistema visual obligatorio: referencia/brand o [Sistema Visual por Defecto](sistema-visual-default.md).
 
-No reducir tipografía o visuales hasta hacerlos incómodos de leer para cumplir un número de páginas arbitrario.
+No reducir tipografía o visuales hasta hacerlos incómodos de leer.
 
-La familia tipográfica debe ser profesional, disponible en el entorno de destino y coherente con la referencia/proyecto. Aptos puede ser válida, pero no es una obligación universal.
+## Tipografía
 
-## Estructura semántica obligatoria
+- Evitar Calibri como salida genérica de CREAR.
+- Usar primero tipografía aprobada; si no existe, Avenir Next → Manrope → Aptos según disponibilidad real.
+- Verificar render final; si la fuente sustituye o falla, elegir el siguiente fallback.
+- Aplicar estilos Word para los roles repetibles en lugar de formato directo masivo.
 
-- usar estilos Título/Encabezado reales;
-- cualquier rótulo que funcione como sección debe mapear a Heading 1/2/3 salvo etiquetas menores claramente decorativas;
+## Estructura semántica
+
+- usar estilos Título/Heading reales para estructura;
 - listas nativas y numeración semántica;
-- tablas para datos, comparaciones y registros estructurados, **no como contenedor genérico de diseño**;
-- si una tabla tiene función semántica, marcar encabezados cuando corresponda;
-- evitar una única fila con grandes bloques narrativos como mecanismo de columnas;
-- evitar alturas fijas que recorten contenido;
-- mantener headings unidos al contenido siguiente;
-- mantener captions unidos a sus visuales;
-- preservar orden de lectura;
-- mantener relaciones de aspecto;
-- texto alternativo significativo;
-- hipervínculos reales;
-- secciones válidas;
-- reducir formato directo cuando una regla de estilo reutilizable pueda expresarse mediante estilos Word.
+- tablas semánticas para datos/comparación/registro;
+- una estructura tabular **puede** usarse como soporte de composición simple si mejora el escaneo y mantiene orden de lectura obvio, pero no para párrafos narrativos densos ni como falsa tabla de datos;
+- evitar alturas fijas que recorten;
+- mantener headings/captions unidos a su contenido;
+- preservar orden de lectura, proporciones, hipervínculos y secciones válidas.
 
 ## Composición
 
-La implementación Word debe obedecer [Composición Adaptativa](composicion-adaptativa.md), no una plantilla fija.
+La implementación Word debe obedecer [Composición Adaptativa](composicion-adaptativa.md) y el sistema visual elegido.
 
-Si una tabla, visual o bloque no funciona:
-1. corregir contenido/arquitectura;
-2. cambiar representación;
-3. redistribuir espacio;
-4. añadir página si es necesario;
-5. solo después ajustar tamaños dentro de rangos profesionales.
+Si el documento se ve como Word por defecto:
+1. no liberar;
+2. revisar jerarquía;
+3. aplicar tokens tipográficos/cromáticos;
+4. mejorar agrupación y ritmo;
+5. incorporar una estructura visual útil si aporta escaneo;
+6. volver a renderizar.
 
-En una página solicitada explícitamente, revisar el **área útil completa**. Un bloque denso concentrado arriba con un tercio o más de página vacío abajo es un defecto de composición salvo justificación explícita.
+En una página solicitada explícitamente, revisar el área útil completa. Mucho espacio blanco puede ser válido si es intencional; no es válido cuando refleja contenido mal distribuido.
 
 ## Visuales
 
-Canva/diseño puede producir diagramas, mapas conceptuales, marcos, comparativas o recursos gráficos. Integrarlos en Word de manera que:
-- el recurso siga siendo legible;
-- el texto principal no quede rasterizado innecesariamente;
-- no se deforme ni recorte sin intención;
-- la composición general siga editable y navegable;
-- el visual tenga función real.
+Canva/diseño puede producir diagramas, mapas conceptuales, marcos, comparativas o recursos gráficos. Integrarlos manteniendo legibilidad, editabilidad y función real.
 
 ## Control final
 
 Después del último cambio material:
 - renderizar;
-- revisar todas las páginas;
-- confirmar que no existen clipping, superposición, títulos huérfanos, tablas rotas, páginas vacías, miniaturización o vacíos accidentales;
-- confirmar balance vertical/horizontal y coherencia de color/tipografía;
+- revisar todas las páginas a miniatura y al 100%;
+- comprobar clipping, superposición, títulos huérfanos, tablas rotas, miniaturización y vacíos accidentales;
+- confirmar balance, jerarquía, tipografía, paleta y ritmo;
+- confirmar que el documento no parece un borrador de Word;
 - validar accesibilidad y estructura semántica;
-- revisar fidelidad cuando aplique;
-- reabrir el DOCX final y repetir render si se produjo cualquier corrección.
+- reabrir el DOCX final y repetir render tras cualquier corrección.
 
 La herramienta documental resuelve la mecánica; Estándar Documental decide si el resultado es profesionalmente aceptable.
