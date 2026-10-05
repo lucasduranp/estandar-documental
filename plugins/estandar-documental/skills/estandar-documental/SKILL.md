@@ -10,102 +10,81 @@ description: Crear, adaptar, replicar y auditar documentos Word profesionales co
 Antes de cualquier ejecución o cambio del estándar, leer [Decisiones bloqueadas](references/decisiones-bloqueadas.md).
 
 - **Aptos es la tipografía oficial y obligatoria de Estándar Documental.**
+- La conformidad tipográfica se verifica en el **DOCX**, no en la lista de fuentes de un preview auxiliar.
 - Trabajar en español por defecto.
-- Tratar Professional Document Standard y versiones anteriores como antecedentes históricos, nunca como fallback operativo.
-- No importar decisiones visuales de otros sistemas. En particular, **Avenir Next pertenece a las publicaciones de LinkedIn de Agrícola Zhong Yi y no a Estándar Documental**.
-- Clasificar primero el modo: **CREAR**, **ADAPTAR** o **REPLICAR**.
-- Seleccionar después el perfil: **COMPACTO_OPERACIONAL**, **ANALÍTICO_NEGOCIO**, **VISUAL_COMERCIAL**, **REFERENCIA_RÁPIDA_OPERACIONAL** o **ESTUDIO_APRENDIZAJE**.
-- Definir propósito, audiencia/uso, resultado esperado, fuentes de verdad, referencia aprobada, elementos bloqueados y salida.
-- Verificar que el título, alcance y contenido describan exactamente el mismo entregable.
+- No importar decisiones visuales de otros sistemas. **Avenir Next pertenece a las publicaciones de LinkedIn de Agrícola Zhong Yi, no a Estándar Documental.**
+- Clasificar modo: **CREAR**, **ADAPTAR** o **REPLICAR**.
+- Seleccionar perfil.
+- Definir propósito, audiencia, resultado esperado, fuentes, referencia aprobada, elementos bloqueados y salida.
+- Mantener coherencia entre título, alcance y contenido.
 
-Leer [Perfiles](references/perfiles.md). Leer [Idioma y Gobernanza](references/idioma-gobernanza.md) cuando haya dudas de nomenclatura.
+Leer [Perfiles](references/perfiles.md).
 
-## Fijar la fuente visual antes de diseñar
+## Routing obligatorio para DOCX
 
-En **CREAR**, elegir una fuente visual explícita:
+Aplicar [Ejecución Técnica](references/ejecucion-tecnica.md).
 
-1. referencia aprobada del usuario/proyecto compatible con las decisiones bloqueadas;
-2. sistema visual de marca vigente compatible con las decisiones bloqueadas;
-3. si no existe ninguna, usar [Sistema Visual por Defecto](references/sistema-visual-default.md).
+- En Work/Codex, seleccionar explícitamente **@Documents / Documents** para crear o editar DOCX.
+- No usar runtimes heredados ni loaders locales propios como ruta de producción.
+- Si @Documents no está disponible, informar la limitación exacta.
+- Un fallo de runtime heredado no es un fallo de Estándar Documental ni debe bloquear una ruta oficial disponible.
 
-La fuente visual puede definir color, composición, iconografía y ritmo, pero **no sustituye Aptos** salvo instrucción explícita del usuario para ese documento.
+## Fuente visual
 
-Nunca dejar que Word o el especialista elijan silenciosamente un estilo genérico por defecto.
+En CREAR:
+1. referencia aprobada compatible;
+2. sistema de marca compatible;
+3. si no existe, [Sistema Visual por Defecto](references/sistema-visual-default.md).
 
-En **ADAPTAR/REPLICAR**, gobierna la referencia aprobada salvo conflicto con una instrucción explícita del usuario o con una decisión bloqueada que deba preservarse.
+La fuente visual puede definir color, composición e iconografía, pero no sustituye Aptos.
 
-## Diseñar según la función
+## Diseñar según función
 
 Aplicar [Composición Adaptativa](references/composicion-adaptativa.md).
 
-- Elegir texto, tabla, gráfico, diagrama, imagen o combinación según lo que el lector deba comprender, decidir, recordar o hacer.
-- Exigir una función clara a cada visual.
-- Evitar cuotas de imágenes, decoración de relleno y pseudo-infografías.
-- Resolver problemas de espacio en este orden: eliminar redundancia → sintetizar → mejorar estructura → cambiar representación → redistribuir → añadir página → ajustar tamaños profesionales.
-- Tratar una referencia aprobada en ADAPTAR/REPLICAR como baseline bloqueada, no como inspiración.
+- Elegir representación según lo que el lector deba comprender, decidir, recordar o hacer.
+- Exigir función clara a cada visual.
+- Evitar decoración, pseudo-infografías y relleno.
+- Resolver espacio por contenido/arquitectura antes que por miniaturización.
 
-Para **ESTUDIO_APRENDIZAJE**, leer además [Estudio y Aprendizaje](references/estudio-aprendizaje.md).
+## Gates
 
-## Gates no negociables de calidad profesional
+- **Tipografía del archivo:** DOCX declara Aptos.
+- **Jerarquía:** ruta visual inequívoca.
+- **Sistema visual:** composición intencional, no Word genérico.
+- **Uso de página:** sin grandes vacíos accidentales ni compresión innecesaria.
+- **Densidad:** sin paredes de texto ni columnas estrechas.
+- **Semántica Word:** estructura nativa correcta.
+- **Alcance:** título y contenido coherentes.
+- **Aplicabilidad:** acción/decisión/regla localizable rápido.
+- **Render/preview:** revisar tras último cambio; si el preview no tiene Aptos, tratarlo como limitación de preview, no como autorización para cambiar la fuente.
 
-Antes de liberar cualquier DOCX:
+### COMPACTO_OPERACIONAL
 
-- **Tipografía:** Aptos aplicada de forma consistente; sustitución silenciosa = BLOQUEO.
-- **Jerarquía:** ruta visual inequívoca entre título, mensaje principal, secciones y cierre.
-- **Sistema visual:** color, reglas, superficies y espaciados deben responder a una lógica consistente.
-- **Genericidad:** en CREAR, bloquear apariencia de Word por defecto salvo petición explícita de estilo plano.
-- **Uso de página:** no aceptar contenido comprimido con grandes zonas vacías accidentales.
-- **Densidad:** no aceptar paredes de texto, columnas estrechas con párrafos largos ni texto miniaturizado.
-- **Semántica Word:** usar estructura nativa cuando corresponda sin sacrificar una composición profesional.
-- **Alcance:** el contenido no puede ampliar silenciosamente el título o propósito.
-- **Aplicabilidad:** acción, decisión, regla o dato principal localizable en segundos.
-- **Render final:** revisar todas las páginas después del último cambio material. Un archivo generado pero no inspeccionado sigue **BLOQUEADO**.
+- objetivo/acción primero;
+- pocos bloques claros;
+- microestructuras operativas;
+- intención editorial visible;
+- página equilibrada;
+- lectura normal sin zoom;
+- cierre con comprobación o próximo paso.
 
-### Gate adicional para COMPACTO_OPERACIONAL
+## Ejecutar
 
-Un documento compacto no es simplemente “una página”. Debe:
+Aplicar [Implementación Word](references/implementacion-word.md).
 
-- priorizar objetivo/conclusión/acción en la primera zona de lectura;
-- organizar el contenido en pocos bloques claramente distinguibles;
-- usar microestructuras operativas cuando mejoren la ejecución;
-- mostrar intención editorial visible, no una lista genérica de viñetas;
-- aprovechar la página de forma equilibrada;
-- mantener lectura normal sin zoom;
-- cerrar con comprobación, acción o próximo paso.
+- @Documents ejecuta la mecánica DOCX.
+- Estándar Documental gobierna calidad y aceptación.
+- Si el resultado es genérico o viola decisiones bloqueadas, corregir antes de liberar.
 
-## Ejecutar con especialistas
-
-Aplicar [Ejecución Técnica](references/ejecucion-tecnica.md) y [Implementación Word](references/implementacion-word.md).
-
-- Usar la capacidad documental disponible para creación/edición DOCX, estructura, accesibilidad y render.
-- Usar herramientas de datos para cálculos y gráficos cuantitativos.
-- Usar investigación cuando se necesite evidencia pública actual.
-- Usar Canva/diseño cuando un recurso visual mejore materialmente la comprensión.
-- Mantener Word como contenedor editable y semántico cuando la salida final sea DOCX.
-- No reconstruir dentro de esta skill capacidades ya resueltas por especialistas.
-- Si el especialista devuelve una fuente distinta de Aptos, un resultado genérico o viola los gates anteriores, **corregirlo**; no aceptar su salida como autoridad estética.
-
-## Proteger integridad y contexto
-
-Leer [Integridad](references/integridad.md) y [Aislamiento de Contexto](references/aislamiento-contexto.md).
-
-- No inventar datos ni completar desconocidos por estética.
-- Separar hecho, evidencia reportada, supuesto, estimación e interpretación.
-- Mantener trazabilidad de cálculos y afirmaciones materiales.
-- Evitar que memoria o contexto previo amplíen el alcance solicitado.
-
-Para ADAPTAR/REPLICAR, leer [Preservación](references/preservacion.md).
-
-## Verificar antes de liberar
+## Verificar
 
 Aplicar [Control de Calidad](references/control-calidad.md).
 
-- Delegar controles mecánicos a herramientas existentes.
-- Evaluar propósito, arquitectura, jerarquía, sistema visual, representación, densidad, uso del espacio, utilidad visual, aplicabilidad y fidelidad.
-- Verificar explícitamente **Aptos** en el DOCX/render final.
-- Revisar visualmente todas las páginas después del último cambio material.
-- Auditar estructura Word: headings, tablas, listas y accesibilidad.
-- Declarar **FINAL** solo con todos los controles aplicables aprobados y sin defectos BLOQUEANTES/MAYORES.
-- Mantener **BLOQUEADO** cuando falte evidencia o exista un defecto material.
+- Verificar Aptos dentro del DOCX.
+- Revisar visualmente todas las páginas.
+- Auditar headings, listas, tablas, accesibilidad y composición.
+- Declarar **FINAL** solo con gates aplicables aprobados.
+- Mantener **BLOQUEADO** solo por defectos reales del documento/capacidad, no por ausencia de Aptos en un preview auxiliar.
 
-Para cambios de la propia skill, seguir [Protocolo de Regresión](references/regresion.md). Consultar [Referencias de Diseño](references/referencias-diseno.md) al actualizar criterios; no reinvestigar la web en cada ejecución normal.
+Para cambios de la skill, seguir [Protocolo de Regresión](references/regresion.md).
