@@ -1,65 +1,55 @@
-# Controles de aceptación — v1.3.3
+# Controles de aceptación — v1.3.4
 
 ## Controles
 
 | Control | Evidencia requerida |
 |---|---|
 | Decisiones bloqueadas | Aptos, español, modos y gobernanza preservados |
-| Requisitos / Propósito | Título, alcance y uso real coherentes |
+| Routing | @Documents usado para DOCX; no runtime heredado |
+| Tipografía del archivo | DOCX declara Aptos en estilos/tema/runs aplicables |
+| Requisitos / Propósito | Título, alcance y uso coherentes |
 | Contenido / Arquitectura | Síntesis, secuencia y longitud proporcional |
-| Sistema Visual | Fuente visual definida; Aptos + color, superficies y espaciado coherentes |
-| Representación | Texto/tabla/gráfico/diagrama/imagen elegidos por función |
-| Composición | Legibilidad, densidad, balance, uso del espacio y ritmo profesionales |
-| Genericidad | En CREAR, apariencia intencionalmente diseñada; no Word default salvo solicitud |
-| Aplicabilidad | El lector puede decidir, ejecutar, consultar, comprender o aprender |
-| Fidelidad | En ADAPTAR/REPLICAR, baseline preservada sin romper decisiones bloqueadas |
-| Estructura Word | Estilos/listas/tablas/secciones/enlaces válidos |
-| Integridad de construcción | DOCX válido y reabierto |
-| Accesibilidad | Orden de lectura, headings, tablas, contraste, color no exclusivo |
-| Control visual | Render final inspeccionado en miniatura y 100%; Aptos confirmada |
+| Sistema Visual | Color, superficies, espaciado y jerarquía coherentes con Aptos |
+| Composición | Legibilidad, densidad, balance y uso del espacio |
+| Genericidad | En CREAR, apariencia intencionalmente diseñada |
+| Aplicabilidad | El lector puede ejecutar/decidir/consultar |
+| Fidelidad | Baseline preservada en ADAPTAR/REPLICAR |
+| Estructura Word | Estilos/listas/tablas/secciones válidos |
+| Integridad | DOCX válido y reabierto |
+| Accesibilidad | Orden de lectura, headings, tablas, contraste |
+| Control visual | Preview/render revisado; limitaciones de fuente del preview no cambian el DOCX |
 | Uso final | Escenario real completado sin corrección pendiente |
-
-Un aprobado técnico no compensa una mala solución editorial o visual.
 
 ## BLOQUEOS duros
 
-Bloquear si aparece cualquiera de estos problemas:
+Bloquear si:
+- el DOCX declara una fuente distinta de Aptos sin autorización;
+- @Documents no está disponible y no existe otra capacidad documental oficial;
+- se usa un runtime heredado como sustituto improvisado;
+- archivo corrupto, clipping, superposición o ilegibilidad;
+- apariencia genérica en CREAR;
+- pérdida de fidelidad;
+- cambio de decisión bloqueada sin autorización.
 
-- fuente distinta de Aptos sin instrucción explícita del usuario;
-- sustitución silenciosa de Aptos en render;
-- archivo corrupto, contenido perdido, clipping o superposición;
-- texto/visual materialmente ilegible;
-- miniaturización usada como estrategia de paginación;
-- apariencia genérica de Word en CREAR sin solicitud explícita de estilo plano;
-- ausencia de una fuente visual definida;
-- headings visuales sin estructura Word cuando corresponda;
-- grandes vacíos accidentales o composición claramente desequilibrada;
-- 3+ columnas con narrativa densa;
-- pseudo-infografía o visual decorativo;
-- paleta/acentos incoherentes;
-- pérdida de fidelidad en ADAPTAR/REPLICAR;
-- título o alcance incoherente con el contenido;
-- documento técnicamente correcto pero visualmente indistinguible de un borrador;
-- cambio de una decisión bloqueada sin aprobación explícita del usuario.
+**No bloquear solo porque un renderer auxiliar no tenga Aptos**, siempre que:
+1. el DOCX declare Aptos;
+2. la composición tenga holgura suficiente;
+3. el preview permita revisar layout general;
+4. no se haya sustituido la fuente dentro del archivo.
 
 ## Revisión visual
 
-Hacer:
-- comprobación previa de [Decisiones bloqueadas](decisiones-bloqueadas.md);
-- verificación tipográfica Aptos;
-- vista miniatura para intención, balance y jerarquía;
-- revisión al 100% para legibilidad;
-- auditoría semántica Word;
-- revisión de sistema visual;
-- comparación con referencia aprobada cuando exista.
-
-Toda modificación posterior invalida la aprobación visual anterior.
+- vista miniatura;
+- revisión al 100%;
+- auditoría semántica;
+- verificación de Aptos en el DOCX;
+- comparación con referencia cuando exista.
 
 ## Severidad
 
-**BLOQUEANTE**: violación de decisión bloqueada, integridad, legibilidad, fidelidad crítica o ausencia de sistema visual en CREAR.  
-**MAYOR**: jerarquía, representación, densidad, genericidad, composición o aplicabilidad que impiden uso profesional.  
-**MENOR**: defecto visible reparable.  
-**PULIDO**: no reabre diseño una vez alcanzada suficiencia profesional.
+**BLOQUEANTE**: violación real del DOCX/decisiones, ausencia de capacidad oficial, integridad o legibilidad crítica.  
+**MAYOR**: genericidad, jerarquía, composición o aplicabilidad deficiente.  
+**MENOR**: defecto reparable.  
+**PULIDO**: no reabre diseño tras alcanzar suficiencia profesional.
 
 FINAL requiere todos los controles aplicables aprobados y cero defectos BLOQUEANTES/MAYORES.
