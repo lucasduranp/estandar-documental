@@ -1,71 +1,64 @@
-# Implementación Word nativa — v1.3.3
+# Implementación Word nativa — v1.3.4
 
 ## Principio
 
-La estructura Word debe ser semántica, editable y mantenible **sin reducir el documento a una apariencia genérica**. Usar la capacidad documental disponible; Estándar Documental gobierna propósito, sistema visual, arquitectura, fidelidad y aceptación.
+La estructura Word debe ser semántica, editable, mantenible y visualmente profesional. El especialista oficial de documentos ejecuta; Estándar Documental gobierna.
 
 Antes de ejecutar, leer [Decisiones bloqueadas](decisiones-bloqueadas.md).
 
-## Valores por defecto y adaptabilidad
+## Ruta técnica
+
+- En Work/Codex usar explícitamente **@Documents / Documents**.
+- No usar runtime heredado ni loader local propio como ruta principal.
+- Si @Documents no está disponible, informar esa limitación en vez de improvisar otro runtime.
+
+## Valores por defecto
 
 Para CREAR:
-- A4 vertical como punto de partida;
+- A4 vertical;
 - márgenes 20–25,4 mm según composición;
-- orientación horizontal solo cuando aporte una ventaja funcional clara;
-- sistema visual obligatorio: referencia/brand compatible o [Sistema Visual por Defecto](sistema-visual-default.md).
-
-No reducir tipografía o visuales hasta hacerlos incómodos de leer.
+- orientación horizontal solo con ventaja funcional;
+- sistema visual obligatorio: referencia compatible o Sistema Visual por Defecto.
 
 ## Tipografía — decisión bloqueada
 
-- **Aptos es la única tipografía oficial de Estándar Documental.**
-- Aplicar Aptos a todos los roles del DOCX.
+- **Aptos es la única tipografía oficial.**
+- Declarar Aptos en estilos/tema/runs del DOCX.
 - No usar Avenir Next, Manrope, Calibri ni otra familia como fallback.
-- Si Aptos no está disponible, no sustituir silenciosamente: bloquear y resolver disponibilidad/render.
-- Una excepción puntual requiere solicitud explícita del usuario y no cambia el estándar.
-- Avenir Next corresponde a publicaciones de LinkedIn de Agrícola Zhong Yi, no a documentos.
-
-Aplicar estilos Word para roles repetibles en lugar de formato directo masivo.
+- La disponibilidad de Aptos en un preview auxiliar no gobierna el archivo.
+- Si el preview no dispone de Aptos, no cambiar la fuente: comprobar que el DOCX sigue declarando Aptos y realizar QA visual con holgura de composición.
+- El destino primario es Microsoft Word / Microsoft 365.
 
 ## Estructura semántica
 
-- usar estilos Título/Heading reales para estructura;
-- listas nativas y numeración semántica;
+- estilos Título/Heading reales;
+- listas nativas;
 - tablas semánticas para datos/comparación/registro;
-- una estructura tabular puede usarse como soporte de composición simple si mejora el escaneo y mantiene orden de lectura obvio, pero no para párrafos narrativos densos ni como falsa tabla de datos;
-- evitar alturas fijas que recorten;
-- mantener headings/captions unidos a su contenido;
-- preservar orden de lectura, proporciones, hipervínculos y secciones válidas.
+- estructuras de composición solo cuando mejoren claramente el escaneo;
+- orden de lectura preservado;
+- sin clipping ni alturas fijas frágiles;
+- hipervínculos y secciones válidas.
 
 ## Composición
 
-La implementación Word debe obedecer [Composición Adaptativa](composicion-adaptativa.md) y el sistema visual elegido.
-
-Si el documento se ve como Word por defecto:
+Si el documento se ve como Word genérico:
 1. no liberar;
 2. revisar jerarquía;
-3. aplicar tokens cromáticos y de espaciado manteniendo Aptos;
-4. mejorar agrupación y ritmo;
-5. incorporar una estructura visual útil si aporta escaneo;
-6. volver a renderizar.
+3. mejorar color, ritmo y agrupación;
+4. mantener Aptos;
+5. volver a renderizar/previsualizar.
 
-En una página solicitada explícitamente, revisar el área útil completa. Mucho espacio blanco puede ser válido si es intencional; no es válido cuando refleja contenido mal distribuido.
-
-## Visuales
-
-Canva/diseño puede producir diagramas, mapas conceptuales, marcos, comparativas o recursos gráficos. Integrarlos manteniendo legibilidad, editabilidad y función real. El texto editable del documento sigue usando Aptos.
+Diseñar con holgura; evitar layouts que dependan de ajustes milimétricos de una fuente instalada localmente.
 
 ## Control final
 
 Después del último cambio material:
-- verificar que el DOCX usa Aptos en todos los roles;
-- renderizar;
-- verificar que Aptos no fue sustituida;
-- revisar todas las páginas a miniatura y al 100%;
-- comprobar clipping, superposición, títulos huérfanos, tablas rotas, miniaturización y vacíos accidentales;
-- confirmar balance, jerarquía, paleta y ritmo;
-- confirmar que el documento no parece un borrador de Word;
-- validar accesibilidad y estructura semántica;
-- reabrir el DOCX final y repetir render tras cualquier corrección.
+- verificar en el DOCX que Aptos está declarada;
+- reabrir el DOCX;
+- renderizar/previsualizar con la capacidad disponible;
+- revisar todas las páginas a miniatura y 100%;
+- comprobar clipping, superposición, balance, jerarquía, paleta y ritmo;
+- validar accesibilidad y estructura;
+- si el preview sustituye Aptos, tratarlo como limitación del preview y no como sustitución del archivo.
 
-La herramienta documental resuelve la mecánica; Estándar Documental decide si el resultado es profesionalmente aceptable.
+La conformidad tipográfica se determina por el DOCX y su target Word/Microsoft 365, no por la lista de fuentes del renderer auxiliar.
