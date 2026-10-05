@@ -1,5 +1,5 @@
 {
-  "version": "1.3.1",
+  "version": "1.3.2",
   "proposito": "Escenarios de regresión/evaluación para composición adaptativa, fidelidad, estructura Word y casos negativos de calidad observados en uso real.",
   "casos": [
     {
@@ -96,6 +96,21 @@
       "id": "NEG07",
       "escenario": "Documento con más de un tercio inferior vacío y contenido denso arriba",
       "esperado": "BLOQUEADO: uso de página desequilibrado; recomponer antes de liberar."
+    },
+    {
+      "id": "AQ11",
+      "escenario": "CREAR sin referencia visual",
+      "esperado": "Debe aplicar una fuente visual explícita (marca/referencia o Sistema Visual por Defecto); no aceptar un DOCX negro/Calibri con apariencia de Word default."
+    },
+    {
+      "id": "AQ12",
+      "escenario": "COMPACTO_OPERACIONAL con contenido breve",
+      "esperado": "Usar una composición editorial intencional —por ejemplo kicker, objetivo, bloques y cierre— sin convertirla en plantilla rígida."
+    },
+    {
+      "id": "NEG08",
+      "escenario": "Título negro + headings negros + bullets estándar en Calibri",
+      "esperado": "BLOQUEADO por genericidad: semántica correcta no compensa ausencia de sistema visual."
     }
   ]
 }
