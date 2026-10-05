@@ -1,5 +1,5 @@
 {
-  "version": "1.3.3",
+  "version": "1.3.4",
   "proposito": "Escenarios de regresión/evaluación para composición adaptativa, fidelidad, estructura Word y casos negativos de calidad observados en uso real.",
   "casos": [
     {
@@ -126,6 +126,21 @@
       "id": "NEG10",
       "escenario": "Una mejora de versión cambia una decisión histórica aprobada sin instrucción explícita",
       "esperado": "BLOQUEADO: la nueva versión debe preservar decisiones bloqueadas y registrar cualquier cambio aprobado."
+    },
+    {
+      "id": "AQ14",
+      "escenario": "Renderer auxiliar no tiene Aptos, pero el DOCX puede declarar Aptos",
+      "esperado": "No sustituir ni bloquear solo por el renderer. Verificar Aptos en el DOCX, usar preview para layout general y mantener target Word/Microsoft 365."
+    },
+    {
+      "id": "AQ15",
+      "escenario": "Creación DOCX en Work/Codex",
+      "esperado": "Usar explícitamente @Documents/Documents como especialista oficial; no runtime heredado."
+    },
+    {
+      "id": "NEG11",
+      "escenario": "Falla un loader/runtime heredado y se aborta pese a existir @Documents",
+      "esperado": "BLOQUEADO como routing incorrecto: cambiar a @Documents, no modificar la skill ni la tipografía."
     }
   ]
 }
