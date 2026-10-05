@@ -12,16 +12,17 @@ El documento debe verse **intencionalmente diseñado** incluso en vista miniatur
 
 ## Tipografía
 
-Prioridad:
-1. tipografía aprobada por el proyecto o referencia;
-2. Avenir Next si está disponible;
-3. Manrope si está disponible;
-4. Aptos como fallback técnico moderno.
+**Aptos es obligatoria.**
 
-No usar Calibri como salida por defecto en CREAR. Verificar que la fuente elegida esté disponible o renderice correctamente; si no, usar el siguiente fallback.
+- Título, headings, cuerpo, tablas, pies y metadatos deben usar Aptos o sus variantes oficiales (Regular, Semibold/Bold, Italic, etc.).
+- No sustituir Aptos por Avenir Next, Manrope, Calibri u otra familia.
+- Si Aptos no está disponible o el renderizador la sustituye, el documento queda **BLOQUEADO** hasta resolverlo.
+- Una excepción puntual solo es válida si el usuario pide explícitamente otra tipografía para ese documento.
+
+Avenir Next pertenece al sistema visual de publicaciones de LinkedIn de Agrícola Zhong Yi y no forma parte de Estándar Documental.
 
 Escala orientativa para A4:
-- kicker / etiqueta: 8–9 pt, mayúsculas o versalitas;
+- kicker / etiqueta: 8–9 pt;
 - título: 22–28 pt;
 - objetivo / bajada: 10–11.5 pt;
 - encabezado de sección: 11–13 pt;
@@ -41,7 +42,7 @@ Usar roles, no colores arbitrarios:
 - **Texto secundario:** #59615B
 - **Divisor neutro:** #D8DDD8
 
-No es identidad de marca. Si el contexto requiere otro tono, puede cambiarse la paleta preservando los mismos roles y contraste.
+No es identidad de marca. Si el contexto requiere otro tono, puede cambiarse la paleta preservando roles y contraste.
 
 ## Ritmo visual
 
@@ -102,9 +103,9 @@ No convertir estos arquetipos en plantillas rígidas. Su función es ofrecer una
 Bloquear una salida en CREAR si, sin una instrucción explícita de estilo plano:
 - usa apariencia de Word por defecto;
 - todo está en negro sin jerarquía cromática;
-- la tipografía es Calibri por defecto;
+- usa una fuente distinta de Aptos;
 - solo hay título + headings + viñetas sin composición editorial;
 - no existe una jerarquía visual claramente intencionada;
 - el documento podría confundirse con un borrador sin diseño.
 
-La solución no es añadir decoración, sino aplicar un sistema visual coherente.
+La solución no es añadir decoración, sino aplicar un sistema visual coherente con Aptos.
