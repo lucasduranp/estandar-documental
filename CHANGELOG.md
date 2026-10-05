@@ -1,29 +1,17 @@
-# Cambios — v1.3.2
+# Cambios — v1.3.3
 
-## Corrección de regresión visual
+## Restauración de decisión bloqueada
 
-La v1.3.1 resolvió problemas semánticos y de balance, pero sobrecorrigió hacia una salida genérica de Word. La comparación con el documento visualmente superior mostró que faltaba una **dirección visual positiva**, no solo restricciones.
+Se corrige una regresión introducida en v1.3.2.
 
-### Añadido
+- **Aptos vuelve a quedar fijada como tipografía oficial y obligatoria de Estándar Documental.**
+- Se elimina Avenir Next → Manrope → Aptos como fallback.
+- Avenir Next se documenta como perteneciente a publicaciones de LinkedIn de Agrícola Zhong Yi, no a documentos.
+- Se añade `decisiones-bloqueadas.md` como fuente de verdad para reglas que versiones futuras no pueden reinterpretar.
+- Si Aptos no está disponible, la ejecución debe bloquearse o resolver la fuente; no sustituirla.
+- Se añaden evals AQ13, NEG09 y NEG10 para evitar regresiones de gobernanza.
+- Se conserva el Sistema Visual por Defecto y la mejora visual de v1.3.2, ahora construido exclusivamente con Aptos.
 
-- Sistema Visual por Defecto — Editorial Ejecutivo;
-- selección obligatoria de fuente visual antes de CREAR;
-- gate de genericidad;
-- prioridad tipográfica Avenir Next → Manrope → Aptos según disponibilidad;
-- paleta editorial neutra por roles;
-- arquetipos positivos para COMPACTO_OPERACIONAL;
-- permiso controlado de estructuras multicolumna simples cuando mejoran el escaneo;
-- bloqueo explícito de Calibri/default Word sin justificación;
-- evals AQ11, AQ12 y NEG08.
+## Estado
 
-### Conservado
-
-- estructura Word semántica;
-- coherencia título/alcance;
-- render final obligatorio;
-- balance de página;
-- integridad, fidelidad y accesibilidad.
-
-### Estado
-
-CANDIDATA hasta repetir el mismo smoke test y confirmar que combina calidad visual intencional con estructura Word correcta.
+CANDIDATA hasta un último retest.
