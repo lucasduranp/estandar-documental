@@ -1,19 +1,29 @@
-# Cambios — v1.3.1
+# Cambios — v1.3.2
 
-## Corrección tras smoke test real
+## Corrección de regresión visual
 
-El primer DOCX generado con v1.3.0 fue técnicamente válido pero profesionalmente deficiente. Esta versión convierte esos fallos en gates explícitos.
+La v1.3.1 resolvió problemas semánticos y de balance, pero sobrecorrigió hacia una salida genérica de Word. La comparación con el documento visualmente superior mostró que faltaba una **dirección visual positiva**, no solo restricciones.
 
 ### Añadido
 
-- gate obligatorio de balance y uso de página;
-- reglas específicas para COMPACTO_OPERACIONAL;
-- bloqueo de tablas usadas como layout narrativo;
-- exigencia de Heading styles para secciones visibles;
-- gate de coherencia título/alcance/contenido;
-- render e inspección final como condición de liberación;
-- casos de regresión que reproducen el fallo observado.
+- Sistema Visual por Defecto — Editorial Ejecutivo;
+- selección obligatoria de fuente visual antes de CREAR;
+- gate de genericidad;
+- prioridad tipográfica Avenir Next → Manrope → Aptos según disponibilidad;
+- paleta editorial neutra por roles;
+- arquetipos positivos para COMPACTO_OPERACIONAL;
+- permiso controlado de estructuras multicolumna simples cuando mejoran el escaneo;
+- bloqueo explícito de Calibri/default Word sin justificación;
+- evals AQ11, AQ12 y NEG08.
+
+### Conservado
+
+- estructura Word semántica;
+- coherencia título/alcance;
+- render final obligatorio;
+- balance de página;
+- integridad, fidelidad y accesibilidad.
 
 ### Estado
 
-CANDIDATA hasta repetir una vez el mismo smoke test y aprobarlo.
+CANDIDATA hasta repetir el mismo smoke test y confirmar que combina calidad visual intencional con estructura Word correcta.
