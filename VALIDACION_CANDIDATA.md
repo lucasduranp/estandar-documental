@@ -1,45 +1,30 @@
-# Validación — Estándar Documental v1.3.2 CANDIDATA
+# Validación — Estándar Documental v1.3.3 CANDIDATA
 
 ## Estado
 
-**CORREGIDA LA REGRESIÓN HACIA DISEÑO GENÉRICO. PENDIENTE DE UN ÚLTIMO RETEST.**
+**CORREGIDA REGRESIÓN DE GOBERNANZA: APTOS RESTAURADA COMO DECISIÓN BLOQUEADA.**
 
-## Comparación observada
+## Error detectado
 
-El documento anterior visualmente superior tenía:
-- sistema tipográfico intencional;
-- color y superficies coherentes;
-- kicker, título, objetivo, fases y banda de cierre;
-- una composición reconocible a simple vista.
+v1.3.2 introdujo Avenir Next → Manrope → Aptos como prioridad tipográfica. Eso contradijo una decisión histórica ya aprobada.
 
-La nueva ejecución v1.3.1 mejoró:
-- coherencia con el título;
-- headings nativos;
-- listas y semántica;
-- eliminación de layout tabular denso.
+La regla correcta es:
+- Aptos = tipografía oficial de documentos;
+- Avenir Next = publicaciones de LinkedIn de Agrícola Zhong Yi;
+- no mezclar ambos sistemas.
 
-Pero perdió:
-- identidad visual;
-- sistema tipográfico;
-- color;
-- composición editorial;
-- jerarquía visual suficiente.
+## Corrección v1.3.3
 
-## Corrección v1.3.2
-
-Se incorpora un sistema visual positivo por defecto para CREAR cuando no existe referencia/brand:
-- tipografía profesional con fallback verificado;
-- paleta editorial;
-- ritmo de espaciado;
-- recursos visuales permitidos;
-- arquetipos de composición;
-- gate de genericidad.
-
-La semántica Word deja de interpretarse como obligación de producir un documento plano.
+- se crea `decisiones-bloqueadas.md`;
+- Aptos pasa a gate obligatorio en SKILL.md, sistema visual, implementación Word y QA;
+- se elimina cualquier fallback a Avenir Next/Manrope/Calibri;
+- si Aptos no está disponible, se bloquea en vez de degradar;
+- se añade regresión para impedir que futuras versiones cambien decisiones aprobadas;
+- el sistema visual positivo permanece, pero siempre construido con Aptos.
 
 ## Pendiente
 
-1. Actualizar plugin a v1.3.2.
-2. Repetir el mismo smoke test.
-3. Aprobar solo si el documento se ve intencionalmente diseñado y mantiene semántica/legibilidad.
-4. Si pasa, marcar v1.3.2 como VIGENTE y cerrar esta fase.
+1. actualizar plugin a v1.3.3;
+2. repetir el mismo smoke test;
+3. aprobar solo si combina: Aptos + calidad visual intencional + estructura Word correcta;
+4. si pasa, marcar v1.3.3 como VIGENTE.
