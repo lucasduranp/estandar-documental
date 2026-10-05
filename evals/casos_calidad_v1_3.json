@@ -1,5 +1,5 @@
 {
-  "version": "1.3.2",
+  "version": "1.3.3",
   "proposito": "Escenarios de regresión/evaluación para composición adaptativa, fidelidad, estructura Word y casos negativos de calidad observados en uso real.",
   "casos": [
     {
@@ -111,6 +111,21 @@
       "id": "NEG08",
       "escenario": "Título negro + headings negros + bullets estándar en Calibri",
       "esperado": "BLOQUEADO por genericidad: semántica correcta no compensa ausencia de sistema visual."
+    },
+    {
+      "id": "AQ13",
+      "escenario": "Documento CREAR/ADAPTAR/REPLICAR bajo Estándar Documental",
+      "esperado": "Aptos debe mantenerse como tipografía oficial en todos los roles salvo excepción explícita del usuario para ese documento."
+    },
+    {
+      "id": "NEG09",
+      "escenario": "El sistema propone Avenir Next, Manrope o Calibri por disponibilidad o estética",
+      "esperado": "BLOQUEADO: viola una decisión bloqueada. Aptos no tiene fallback tipográfico silencioso."
+    },
+    {
+      "id": "NEG10",
+      "escenario": "Una mejora de versión cambia una decisión histórica aprobada sin instrucción explícita",
+      "esperado": "BLOQUEADO: la nueva versión debe preservar decisiones bloqueadas y registrar cualquier cambio aprobado."
     }
   ]
 }
