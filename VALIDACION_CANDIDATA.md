@@ -1,30 +1,22 @@
-# Validación — Estándar Documental v1.3.3 CANDIDATA
+# Validación — Estándar Documental v1.3.4 CANDIDATA
 
-## Estado
+## Diagnóstico
 
-**CORREGIDA REGRESIÓN DE GOBERNANZA: APTOS RESTAURADA COMO DECISIÓN BLOQUEADA.**
+El bloqueo de v1.3.3 no fue causado por la decisión Aptos, sino por dos reglas operativas mal definidas:
 
-## Error detectado
+1. se confundió “Aptos obligatoria en el DOCX” con “Aptos debe estar instalada en todo renderer auxiliar”;
+2. Work intentó una ruta de runtime/loader en vez de exigir explícitamente el especialista oficial @Documents.
 
-v1.3.2 introdujo Avenir Next → Manrope → Aptos como prioridad tipográfica. Eso contradijo una decisión histórica ya aprobada.
+## Corrección
 
-La regla correcta es:
-- Aptos = tipografía oficial de documentos;
-- Avenir Next = publicaciones de LinkedIn de Agrícola Zhong Yi;
-- no mezclar ambos sistemas.
-
-## Corrección v1.3.3
-
-- se crea `decisiones-bloqueadas.md`;
-- Aptos pasa a gate obligatorio en SKILL.md, sistema visual, implementación Word y QA;
-- se elimina cualquier fallback a Avenir Next/Manrope/Calibri;
-- si Aptos no está disponible, se bloquea en vez de degradar;
-- se añade regresión para impedir que futuras versiones cambien decisiones aprobadas;
-- el sistema visual positivo permanece, pero siempre construido con Aptos.
+- Aptos sigue bloqueada como tipografía oficial;
+- se verifica en el DOCX, no por la lista de fuentes del preview;
+- la ausencia de Aptos en un renderer auxiliar no bloquea por sí sola;
+- el target primario es Microsoft Word / Microsoft 365;
+- para DOCX en Work/Codex se exige explícitamente @Documents/Documents;
+- runtimes heredados quedan fuera de producción;
+- se añaden AQ14, AQ15 y NEG11.
 
 ## Pendiente
 
-1. actualizar plugin a v1.3.3;
-2. repetir el mismo smoke test;
-3. aprobar solo si combina: Aptos + calidad visual intencional + estructura Word correcta;
-4. si pasa, marcar v1.3.3 como VIGENTE.
+Un único retest con @Documents + Estándar Documental v1.3.4.
