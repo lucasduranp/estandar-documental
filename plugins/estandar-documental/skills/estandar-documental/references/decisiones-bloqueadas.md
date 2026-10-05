@@ -9,7 +9,9 @@ Solo pueden modificarse mediante una instrucción explícita del usuario que ind
 - **Aptos es la tipografía oficial y obligatoria de Estándar Documental.**
 - Se aplica en CREAR, ADAPTAR y REPLICAR cuando el documento pertenece al sistema Estándar Documental.
 - No sustituir por Avenir Next, Manrope, Calibri u otra familia por disponibilidad, perfil o preferencia estética.
-- Si Aptos no está disponible en el entorno de render, **BLOQUEAR o resolver la disponibilidad**; no degradar silenciosamente a otra fuente.
+- La obligación tipográfica se verifica en el **DOCX**: estilos, tema y/o runs deben declarar Aptos según corresponda.
+- La ausencia de Aptos en un renderizador auxiliar **no autoriza sustitución** y tampoco bloquea por sí sola la construcción del DOCX si este mantiene Aptos como fuente declarada.
+- El entorno objetivo primario es Microsoft Word / Microsoft 365. Un preview auxiliar puede usar sustitución visual sin alterar la fuente declarada del archivo; esa limitación debe tratarse como limitación de preview, no como cambio del estándar.
 - Una instrucción explícita del usuario puede autorizar otra tipografía para un documento puntual; esa excepción no altera el estándar.
 
 ### Separación de sistemas visuales
